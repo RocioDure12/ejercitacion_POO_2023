@@ -32,41 +32,44 @@ según tus necesidades. ¡Diviértete practicando la POO y la gestión de fechas
 """
 
 
+class Reserva:
+    fecha_hora: datetime
+    sala
+
+    def __init__(self, fecha_hora: datetime, sala):
+        self.fecha_hora = fecha_hora
+        self.sala = sala
+
+
 class Sala:
     nombre: str
     capacidad_max: int
+    lista_reservas: List[Reserva] = []
 
-    def __init__(self, nombre:str, capacidad_max:int):
-        self.nombre=nombre
-        self.capacidad_max=capacidad_max
+    def __init__(self, nombre: str, capacidad_max: int):
+        self.nombre = nombre
+        self.capacidad_max = capacidad_max
 
-class Reserva:
-    fecha_hora: datetime
-    sala:Sala
-    
-    def __init__(self, fecha_hora:datetime, sala:Sala):
-        self.fecha_hora=fecha_hora
-        self.sala=sala
-        
+
 class Empledo:
-    id:int
-    nombre:str
-    apellido:str
-    
-    def __init__(self, id:int, nombre:str,apellido:str):
-        self.id=id
-        self.nombre=nombre
-        self.apellido=apellido
-    
+    id: int
+    nombre: str
+    apellido: str
+
+    def __init__(self, id: int, nombre: str, apellido: str):
+        self.id = id
+        self.nombre = nombre
+        self.apellido = apellido
+
+
 class Empresa:
     nombre: str
-    lista_salas:List[Sala]=[]
-    lista_reservas:List[Reserva]=[]
-    
-    def __init__(self, nombre:str, list_salas:List, list_reservas:List):
-        self.nombre=nombre
-        self.lista_salas=list_salas
-        self.lista_reservas=list_reservas
+    lista_salas: List[Sala] = []
+
+    def __init__(self, nombre: str, list_salas: List, list_reservas: List):
+        self.nombre = nombre
+        self.lista_salas = list_salas
+        self.lista_reservas = list_reservas
 
     def consultar_disponibilidad_sala(self):
         print("l")
@@ -82,9 +85,3 @@ class Empresa:
 
     def mostrar_lista_salas(self):
         print("l")
-    
-    
-
-    
-
-
