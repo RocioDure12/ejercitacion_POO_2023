@@ -31,12 +31,11 @@ para manejar las fechas y horarios. Puedes utilizar el lenguaje de programación
 según tus necesidades. ¡Diviértete practicando la POO y la gestión de fechas!
 """
 
-
 class Reserva:
     fecha_hora: datetime
     sala
 
-    def __init__(self, fecha_hora: datetime, sala):
+    def __init__(self, fecha_hora:datetime, sala):
         self.fecha_hora = fecha_hora
         self.sala = sala
 
