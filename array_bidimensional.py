@@ -12,8 +12,8 @@ Después de obtener la matriz de ventas, el programa debe calcular el total de v
 el total de ventas por día. Luego, muestra los resultados en la consola.
 """
 
-registro_ventas=[
-    [],#Lunes
+"""registro_ventas=[
+    [{plancha:}],#Lunes
     [],#Martes
     [],#Miercoles
     [],#Jueves
@@ -21,3 +21,12 @@ registro_ventas=[
     [],#Sabado
     []#Domingo
 ]
+"""
+registro_ventas=[]
+
+for i in range(7):
+    ventas=[]
+    for i in range(3):
+        ventas.append(int(input("Ingrese cantidad")))
+    registro_ventas.append(ventas)
+    
