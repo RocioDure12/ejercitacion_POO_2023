@@ -55,3 +55,36 @@ def ordenar_lista(lista):
 
 lista_num = [66, 22, 33, 44, 55] 
 print(ordenar_lista(lista_num))
+
+numbers=[2,9,8,7,5,0]
+for i in numbers:
+    print(i)
+    
+empleados=[
+    ["Lucas", 25, "Marketing"],
+    ["Joaquin", 50,"Ventas"],
+    ["Luana",32,"Diseño"],
+    
+]
+
+for empleado in empleados:
+        for i in empleado:
+            print(i)
+
+abecedario=[
+    [["A","B","C"],["D","E","F"],["G","H","I"]],
+    [["J","K"],["L"],["M","N","O"]],
+    [["P"],["Q","R","S"],["T","U"]],
+    [["V", "W"],["X","Y"],["Z"]]
+]
+
+
+for conjunto_letras in abecedario:
+    for letras in conjunto_letras :
+        for i in letras:
+            print(i)
+      
+      
+print(abecedario[0][0][0])
+print(abecedario[3][2][0])
+
