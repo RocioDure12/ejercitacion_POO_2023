@@ -1,25 +1,27 @@
 #servicios que se encargan de dar una base para transformar los datos (clases abstractas)
-"""
-*Si instancio una clase (BaseModel->proveedor) es un objeto tipo BaseModel en ese caso necesito transformarlo en un dict
-(Item to row)
-
-*Recibo un dict (row) y lo convierto en un string apto para insertar en la db (row to sql)
-
-*Recibo un dict y lo tranformo en una instancia de BaseModel (row to item)
-
-"""
+from abc import abstractmethod
 from abc import ABC
-from base.model import BaseModel
+from ..base.model import BaseModel
+from typing import List
+
 
 class BaseServices(ABC):
+
+    def row_to_sql(self, item:dict):
+        sql = ""
+        for key in item:
+            sql+=f"{key}={item[key]},"
+        return sql.rstrip(",")
     
-    def item_to_row(self, item:BaseModel):
-        print("p")
+    @abstractmethod
+    def item_to_row(self,item:BaseModel) -> dict:
+        data = {}
+        return data
     
-    def row_to_item(self):
-         print("p")
-         
-    def row_to_item(self):
-         print("p")
-    
-    
+    '''
+    @abstractmethod
+    def row_to_item(self,row:dict) -> BaseModel:
+        item = BaseModel()
+        item.id = row['id']
+        return item
+    '''
